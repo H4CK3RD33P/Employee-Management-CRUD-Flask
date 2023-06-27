@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
+import os
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///employee.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 db = SQLAlchemy(app)
 
 class Employee(db.Model):
@@ -72,4 +73,4 @@ def update_employee(employee_id):
 
 
 if __name__=='__main__':
-    app.run(debug=True,port=10000)
+    app.run(debug=True,port=10000,host='0.0.0.0')
