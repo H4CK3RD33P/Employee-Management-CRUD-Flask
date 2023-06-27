@@ -42,5 +42,16 @@ def employees():
     employees = Employee.query.all()
     return render_template('employees.html', employees=employees)
 
+@app.route('/delete-employee/<int:employee_id>')
+def delete_employee(employee_id):
+    employee = Employee.query.get(employee_id)
+    try:
+        db.session.delete(employee)
+        db.session.commit()
+        return render_template('confirmation.html',flag="D")
+    except Exception as e:
+        return str(e)
+
+
 if __name__=='__main__':
     app.run(debug=True,port=10000)

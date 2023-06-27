@@ -28,7 +28,7 @@ h1 {
     /* Style DELETE button */
     background-color: red;
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
     border: none;
     border-radius: 10px;
     padding: 8px 16px;
@@ -39,7 +39,7 @@ h1 {
     /* Style UPDATE button */
     background-color: blue;
     color: white;
-    font-weight: bolder;
+    font-weight: bold;
     border: none;
     border-radius: 10px;
     padding: 8px 16px;
