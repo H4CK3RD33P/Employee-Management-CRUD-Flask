@@ -1,0 +1,7 @@
+- name: Docker Hub Description
+  uses: peter-evans/dockerhub-description@v3
+  with:
+    username: ${{ secrets.DOCKERHUB_USERNAME }}
+    password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    repository: h4ck3rd33p/employee-management-flask-app
+    
