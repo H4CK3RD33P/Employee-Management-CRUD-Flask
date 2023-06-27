@@ -52,3 +52,9 @@ h1 {
     opacity: 0.5;
     transition: 1s;
 }
+
+#home-link {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
