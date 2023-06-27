@@ -44,4 +44,5 @@ input[type="submit"] {
 a {
     display: block;
     text-align: center;
+    font-weight: bold;
 }
