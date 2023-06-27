@@ -51,6 +51,24 @@ def delete_employee(employee_id):
         return render_template('confirmation.html',flag="D")
     except Exception as e:
         return str(e)
+    
+@app.route('/update-employee/<int:employee_id>', methods=['GET', 'POST'])
+def update_employee(employee_id):
+    employee = Employee.query.get(employee_id)
+    if request.method == 'POST':
+        # Update employee details
+        try:
+            employee.name = request.form['name']
+            employee.department = request.form['dept']
+            employee.role = request.form['role']
+            employee.salary = request.form['sal']
+            db.session.commit()
+            return render_template('confirmation.html',flag="U")
+        except Exception as e:
+            return str(e)
+    else:
+        # Display update form
+        return render_template('update_employee.html', employee=employee)
 
 
 if __name__=='__main__':
