@@ -6,22 +6,27 @@
 {% block body %}
 <h1>Employee Management System</h1>
 <h2>Enter Employee Details</h2>
-<form method="POST" action=#>
+<form method="POST" action="{{ url_for('submit') }}" id="employee-form">
     <input type="hidden" name="flag" value="C">
-    <label for="name">Name:</label> <input type="text" name="name">
+    <label for="name">Name:</label> <input type="text" name="name" id="name">
     <br>
     <br>
-    <label for="dept">Department:</label> <input type="text" name="dept">
+    <label for="dept">Department:</label> <input type="text" name="dept" id="dept">
     <br>
     <br>
-    <label for="role">Role:</label> <input type="text" name="role">
+    <label for="role">Role:</label> <input type="text" name="role" id="role">
     <br>
     <br>
-    <label for="sal">Salary:</label> <input type="number" name="sal">
+    <label for="sal">Salary:</label> <input type="number" name="sal" id="sal">
     <br>
     <br>
     <input type="submit" value="Submit">
 </form>
 
+<!-- Add h3 element for error message -->
+<h3 id="error-message"></h3>
+
 <a href="#">View all employees</a>
+
+<script src="{{ url_for('static',filename='js/validate.js') }}"></script>
 {% endblock%}

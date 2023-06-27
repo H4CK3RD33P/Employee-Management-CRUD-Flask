@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Confirmation</title>
+<style>
+    h1 {
+    text-align: center;
+    }
+</style>
+{% endblock %}
+{% block body %}
+{% if flag=="C" %}
+    <h1>Employee Created</h1>
+{% elif flag=="D" %}
+    <h1>Employee Deleted</h1>
+{% elif flag=="U" %}
+    <h1>Employee Updated</h1>
+{% endif %}
+{% endblock %}
