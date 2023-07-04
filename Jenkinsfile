@@ -10,7 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'Starting unittests'
-        sh 'export DATABASE_URL=sqlite:///employee.db && nosetests --with-xunit'
+        sh 'export DATABASE_URL=sqlite:///employee.db && pip3 install -r requirements.txt && pip3 install nose && nosetests --with-xunit'
       }
     }
 
