@@ -22,5 +22,11 @@ pipeline {
       }
     }
 
+    stage('Deploy') {
+      steps {
+        sh 'docker push h4ck3rd33p/employee-management-flask-app:latest'
+      }
+    }
+
   }
 }
