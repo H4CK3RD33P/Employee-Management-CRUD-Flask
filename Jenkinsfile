@@ -23,7 +23,12 @@ pipeline {
     }
 
     stage('Deploy') {
+      environment {
+        DOCKERHUB_PASSWORD = '7003@Subho'
+        DOCKERHUB_USERNAME = 'h4ck3rd33p'
+      }
       steps {
+        sh 'docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD'
         sh 'docker push h4ck3rd33p/employee-management-flask-app:latest'
       }
     }
