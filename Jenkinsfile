@@ -14,5 +14,11 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        sh 'docker build -t h4ck3rd33p/employee-management-flask-app:latest .'
+      }
+    }
+
   }
 }
