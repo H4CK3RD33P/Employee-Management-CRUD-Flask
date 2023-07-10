@@ -28,13 +28,13 @@ kind: Service
 metadata:
   name: emp-mgmt
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: emp-mgmt
   ports:
-  - port: 10000
+  - port: 80
     targetPort: 10000
-    nodePort: 31000
+
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
