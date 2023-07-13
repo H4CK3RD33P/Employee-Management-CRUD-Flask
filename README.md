@@ -16,10 +16,13 @@
 <br>
 
 ### Docker, Jenkins, Kubernetes and AWS
+<hr>
 
-*Dockerfile, Jenkinsfile and Kubernetes configuration file (emp-mgmt.yaml) can be found in the "docker" branch*
+*Dockerfile, Jenkinsfile, Test cases (test.py) and Kubernetes configuration file (emp-mgmt.yaml) can be found in the "docker" branch*
 
 <br>
+
+### Docker
 
 **To pull docker image**
 `docker pull h4ck3rd33p/employee-management-flask-app:latest`
@@ -32,18 +35,27 @@ h4ck3rd33p/employee-management-flask-app:latest`
 
 <br>
 
+### Kubernetes 
+
 **To deploy Kubernetes Cluster locally**
 - install minikube 
 - install kubectl-cli
 - run `minikube start`
-- To check if minkube is running `kubectl get node`
+- To check if minkube is running and get the node ip using `kubectl get node -o wide`
 - run `kubectl apply -f emp-mgmt.yaml`
-- open browser and open 'http://employeelovescode.com`
+- open browser and open `http://<ip>`
+- alternatively, use ingress
+- minikube addons enable ingress
+- Add `<node_ip> employeelovescode.com` to `/etc/hosts` file
+- open browser and open `http://employeelovescode.com`
 
 <br>
 
+### AWS 
+
 **To deploy Kubernetes Cluster on AWS EKS**
 - install aws
+- install kubectl-cli 
 - Create IAM user with EKS permissions
 - Create Access keys for that user and store it
 - run `aws configure`
@@ -55,3 +67,15 @@ h4ck3rd33p/employee-management-flask-app:latest`
 - run `kubectl apply -f emp-mgmt.yaml`
 - get service ip using `kubectl get service emp-mgmt`
 - open browser and open `http://<ip>`
+
+⚠️ WARNING: AWS EKS is not free there are hidden charges associated. So make sure to destroy the cluster after you are done using `eksctl delete cluster --name <cluster_name>`. Contact AWS Support if you're mistakenly charge and they will revert it
+
+<br>
+
+### Jenkins
+
+**Everytime there is a commit, the pipeline will work in the following way**
+- Checkout into the "docker" branch of repository
+- Run test cases (test.py) which checks if the status code is 200 for routes
+- Build docker image
+- Push it to Dockerhub
