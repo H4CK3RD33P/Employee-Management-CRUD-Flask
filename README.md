@@ -1,7 +1,7 @@
 # Employee Management CRUD application
 ## By Subhodeep Sarkar
 
-*This is the miniproject for C361 Wiley Edge. It is a employee management web application made using Flask*
+*This is the miniproject for C361 Wiley Edge. It is a employee management web application made using Flask* 
 
 ### Features
 - Form validation using Regular Expression
@@ -22,7 +22,7 @@
 
 <br>
 
-### Docker
+### Docker 🐳
 
 **To pull docker image**
 `docker pull h4ck3rd33p/employee-management-flask-app:latest`
@@ -35,7 +35,7 @@ h4ck3rd33p/employee-management-flask-app:latest`
 
 <br>
 
-### Kubernetes 
+### Kubernetes ☸️
 
 **To deploy Kubernetes Cluster locally**
 - install minikube 
@@ -51,7 +51,7 @@ h4ck3rd33p/employee-management-flask-app:latest`
 
 <br>
 
-### AWS 
+### AWS ☁️
 
 **To deploy Kubernetes Cluster on AWS EKS**
 - install aws
@@ -72,7 +72,7 @@ h4ck3rd33p/employee-management-flask-app:latest`
 
 <br>
 
-### Jenkins
+### Jenkins 👨‍🍳
 
 **Everytime there is a commit, the pipeline will work in the following way**
 - Checkout into the "docker" branch of repository
